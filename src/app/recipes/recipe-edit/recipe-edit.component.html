@@ -4,14 +4,14 @@
       <div class="row">
         <div class="col-xs-12">
           <button [disabled]="recipeEditForm.invalid" class="btn btn-success" type="submit">Save</button>
-          <button class="btn btn-danger" type="button" (click)="onCancel()">Cancel</button>
+          <button (click)="onCancel()" class="btn btn-danger" type="button">Cancel</button>
         </div>
       </div>
       <div class="row" style="margin-top: 20px;">
         <div class="col-xs-12">
           <div class="form-group">
             <label for="name">Name</label>
-            <input class="form-control" formControlName="name" id="name" type="text" #name>
+            <input #name class="form-control" formControlName="name" id="name" type="text">
           </div>
         </div>
       </div>
@@ -19,13 +19,13 @@
         <div class="col-xs-12">
           <div class="form-group">
             <label for="imagePath">Image URL</label>
-            <input class="form-control" formControlName="imagePath" id="imagePath" type="text" #imagePath>
+            <input #imagePath class="form-control" formControlName="imagePath" id="imagePath" type="text">
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <img [alt]="name.value" class="img-responsive" [src]="imagePath.value">
+          <img [alt]="name.value" [src]="imagePath.value" class="img-responsive">
         </div>
       </div>
       <div class="row">
@@ -51,7 +51,7 @@
               <input class="form-control" formControlName="unit" type="text">
             </div>
             <div class="col-xs-1">
-              <button type="button" class="btn btn-danger" (click)="onDeleteIngredient(i)">X</button>
+              <button (click)="onDeleteIngredient(i)" class="btn btn-danger" type="button">X</button>
             </div>
           </div>
           <div class="row" style="margin-top: 10px">
