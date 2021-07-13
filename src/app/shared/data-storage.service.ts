@@ -17,9 +17,7 @@ export class DataStorageService {
     this.http.put(
       'https://recipe-f970d-default-rtdb.europe-west1.firebasedatabase.app/recipes.json',
       recipes
-    ).subscribe(response => {
-      console.log(response);
-    })
+    ).subscribe();
   }
 
   fetchRecipes() {
@@ -34,6 +32,6 @@ export class DataStorageService {
       tap(recipes => {
         this.recipeService.setRecipes(recipes);
       })
-    )
+    );
   }
 }
